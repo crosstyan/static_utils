@@ -4,6 +4,8 @@ See [arm/bin](arm/bin) for the artifacts. Note that the tripple is `arm-linux-gn
 
 See the build instructions for cross-compilation in the corresponding markdown files.
 
+Binaries with `_debug` suffix are the version that has not been stripped.
+
 - [strace](strace.md)
 - [gdbserver](gdbserver.md)
 
