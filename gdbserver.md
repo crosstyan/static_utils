@@ -10,7 +10,6 @@ This document outlines the process for cross-compiling GDB Server for ARM Linux 
 - Linux development environment
 - ARM cross-compiler toolchain (in this case at `/opt/gcc-arm-linux-guneabihf`)
 - GDB source code (version 14.2 used in this example)
-- zsh shell (recommended to avoid issues with PowerShell)
 
 ## Build Script
 
@@ -85,22 +84,18 @@ echo "The statically linked gdbserver binary is located at: $GDB_SOURCE_DIR/gdbs
 
 If you prefer to build manually, follow these steps:
 
-1. **Ensure you're using zsh shell**:
-   ```bash
-   zsh
-   ```
 
-2. **Navigate to the GDB source directory**:
+**Navigate to the GDB source directory**:
    ```bash
    cd /home/crosstyan/third-party/gdb-14.2
    ```
 
-3. **Clean any previous build artifacts**:
+**Clean any previous build artifacts**:
    ```bash
    make distclean
    ```
 
-4. **Configure GDB for cross-compilation with static linking**:
+**Configure GDB for cross-compilation with static linking**:
    ```bash
    ./configure \
        --target=arm-linux-gnueabihf \
@@ -123,12 +118,12 @@ If you prefer to build manually, follow these steps:
        CFLAGS="-O2"
    ```
 
-5. **Build only the gdbserver component**:
+**Build only the gdbserver component**:
    ```bash
    make -j$(nproc) all-gdbserver
    ```
 
-6. **Verify the built binary**:
+**Verify the built binary**:
    ```bash
    file gdbserver/gdbserver
    readelf -h gdbserver/gdbserver
