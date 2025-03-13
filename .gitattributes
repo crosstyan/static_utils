@@ -1,0 +1,4 @@
+arm/bin/gdbserver filter=lfs diff=lfs merge=lfs -text
+arm/bin/gdbserver_debug filter=lfs diff=lfs merge=lfs -text
+arm/bin/strace filter=lfs diff=lfs merge=lfs -text
+arm/bin/strace_debug filter=lfs diff=lfs merge=lfs -text
